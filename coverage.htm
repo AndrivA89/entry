@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>array: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">entry/array/int.go (100.0%)</option>
+				
+				<option value="file1">entry/array/switch.go (100.0%)</option>
+				
+				<option value="file2">entry/entry.go (100.0%)</option>
+				
+				<option value="file3">entry/single/int.go (100.0%)</option>
+				
+				<option value="file4">entry/single/string.go (100.0%)</option>
+				
+				<option value="file5">entry/single/switch.go (100.0%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package array
+
+import "strconv"
+
+func isContainsIntToInt(what []int, where []int) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if o == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToString(what []int, where []string) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if strconv.Itoa(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToFloat64(what []int, where []float64) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if float64(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToFloat32(what []int, where []float32) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if float32(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToUint(what []int, where []uint) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if uint(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToUint8(what []int, where []uint8) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if uint8(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToUint16(what []int, where []uint16) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if uint16(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToUint32(what []int, where []uint32) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if uint32(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func isContainsIntToUint64(what []int, where []uint64) bool <span class="cov8" title="1">{
+        ok := make([]bool, 0, len(what))
+        for _, o := range what </span><span class="cov8" title="1">{
+                for _, w := range where </span><span class="cov8" title="1">{
+                        if uint64(o) == w </span><span class="cov8" title="1">{
+                                ok = append(ok, true)
+                                break</span>
+                        }
+                }
+        }
+        <span class="cov8" title="1">if len(ok) &lt; len(what) </span><span class="cov8" title="1">{
+                return false
+        }</span>
+        <span class="cov8" title="1">return true</span>
+}
+
+func tryConvertForInt(object interface{}, where interface{}) bool <span class="cov8" title="1">{
+        switch where.(type) </span>{
+        case []string:<span class="cov8" title="1">
+                return isContainsIntToString(object.([]int), where.([]string))</span>
+        case []float64:<span class="cov8" title="1">
+                return isContainsIntToFloat64(object.([]int), where.([]float64))</span>
+        case []float32:<span class="cov8" title="1">
+                return isContainsIntToFloat32(object.([]int), where.([]float32))</span>
+        case []uint:<span class="cov8" title="1">
+                return isContainsIntToUint(object.([]int), where.([]uint))</span>
+        case []uint8:<span class="cov8" title="1">
+                return isContainsIntToUint8(object.([]int), where.([]uint8))</span>
+        case []uint16:<span class="cov8" title="1">
+                return isContainsIntToUint16(object.([]int), where.([]uint16))</span>
+        case []uint32:<span class="cov8" title="1">
+                return isContainsIntToUint32(object.([]int), where.([]uint32))</span>
+        case []uint64:<span class="cov8" title="1">
+                return isContainsIntToUint64(object.([]int), where.([]uint64))</span>
+        default:<span class="cov8" title="1">
+                return false</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file1" style="display: none">package array
+
+func SwitchType(what interface{}, where interface{}) bool <span class="cov8" title="1">{
+        switch what.(type) </span>{
+        case []int:<span class="cov8" title="1">
+                if _, ok := where.([]int); ok </span><span class="cov8" title="1">{
+                        return isContainsIntToInt(what.([]int), where.([]int))
+                }</span>
+                <span class="cov8" title="1">return tryConvertForInt(what, where)</span>
+        case []string:<span class="cov8" title="1">
+                return false</span>
+        default:<span class="cov8" title="1">
+                return false</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file2" style="display: none">package entry
+
+import (
+        "entry/array"
+        "entry/single"
+        "reflect"
+)
+
+func IsContains(what interface{}, where interface{}) bool <span class="cov8" title="1">{
+        s := reflect.ValueOf(what)
+        if s.Kind() == reflect.Slice || s.Kind() == reflect.Array </span><span class="cov8" title="1">{
+                return array.SwitchType(what, where)
+        }</span>
+        <span class="cov8" title="1">return single.SwitchType(what, where)</span>
+}
+</pre>
+		
+		<pre class="file" id="file3" style="display: none">package single
+
+import (
+        "strconv"
+        "strings"
+)
+
+func isContainsIntToArrayInt(what int, where []int) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayString(what int, where []string) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if strconv.Itoa(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayFloat64(what int, where []float64) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if float64(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayFloat32(what int, where []float32) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if float32(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayUint(what int, where []uint) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if uint(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayUint8(what int, where []uint8) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if uint8(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayUint16(what int, where []uint16) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if uint16(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayUint32(what int, where []uint32) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if uint32(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsIntToArrayUint64(what int, where []uint64) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if uint64(what) == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func tryConvertForInt(what interface{}, where interface{}) bool <span class="cov8" title="1">{
+        switch where.(type) </span>{
+        case []string:<span class="cov8" title="1">
+                return isContainsIntToArrayString(what.(int), where.([]string))</span>
+        case []float64:<span class="cov8" title="1">
+                return isContainsIntToArrayFloat64(what.(int), where.([]float64))</span>
+        case []float32:<span class="cov8" title="1">
+                return isContainsIntToArrayFloat32(what.(int), where.([]float32))</span>
+        case []uint:<span class="cov8" title="1">
+                return isContainsIntToArrayUint(what.(int), where.([]uint))</span>
+        case []uint8:<span class="cov8" title="1">
+                return isContainsIntToArrayUint8(what.(int), where.([]uint8))</span>
+        case []uint16:<span class="cov8" title="1">
+                return isContainsIntToArrayUint16(what.(int), where.([]uint16))</span>
+        case []uint32:<span class="cov8" title="1">
+                return isContainsIntToArrayUint32(what.(int), where.([]uint32))</span>
+        case []uint64:<span class="cov8" title="1">
+                return isContainsIntToArrayUint64(what.(int), where.([]uint64))</span>
+        case int:<span class="cov8" title="1">
+                return where.(int) == what.(int)</span>
+        case string:<span class="cov8" title="1">
+                return strings.Contains(strings.ToLower(where.(string)), strconv.Itoa(what.(int)))</span>
+        case float64:<span class="cov8" title="1">
+                return float64(what.(int)) == where.(float64)</span>
+        case float32:<span class="cov8" title="1">
+                return float32(what.(int)) == where.(float32)</span>
+        case uint:<span class="cov8" title="1">
+                return uint(what.(int)) == where.(uint)</span>
+        case uint8:<span class="cov8" title="1">
+                return uint8(what.(int)) == where.(uint8)</span>
+        case uint16:<span class="cov8" title="1">
+                return uint16(what.(int)) == where.(uint16)</span>
+        case uint32:<span class="cov8" title="1">
+                return uint32(what.(int)) == where.(uint32)</span>
+        case uint64:<span class="cov8" title="1">
+                return uint64(what.(int)) == where.(uint64)</span>
+        default:<span class="cov8" title="1">
+                return false</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file4" style="display: none">package single
+
+import (
+        "fmt"
+        "strconv"
+        "strings"
+)
+
+func isContainsStringToArrayString(what string, where []string) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == v </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayInt(what string, where []int) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == strconv.Itoa(v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayFloat32(what string, where []float32) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayFloat64(what string, where []float64) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayUint(what string, where []uint) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayUint8(what string, where []uint8) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayUint16(what string, where []uint16) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayUint32(what string, where []uint32) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func isContainsStringToArrayUint64(what string, where []uint64) bool <span class="cov8" title="1">{
+        for _, v := range where </span><span class="cov8" title="1">{
+                if what == fmt.Sprintf("%v", v) </span><span class="cov8" title="1">{
+                        return true
+                }</span>
+        }
+        <span class="cov8" title="1">return false</span>
+}
+
+func tryConvertForString(what interface{}, where interface{}) bool <span class="cov8" title="1">{
+        switch where.(type) </span>{
+        case []int:<span class="cov8" title="1">
+                return isContainsStringToArrayInt(what.(string), where.([]int))</span>
+        case []float32:<span class="cov8" title="1">
+                return isContainsStringToArrayFloat32(what.(string), where.([]float32))</span>
+        case []float64:<span class="cov8" title="1">
+                return isContainsStringToArrayFloat64(what.(string), where.([]float64))</span>
+        case []uint:<span class="cov8" title="1">
+                return isContainsStringToArrayUint(what.(string), where.([]uint))</span>
+        case []uint8:<span class="cov8" title="1">
+                return isContainsStringToArrayUint8(what.(string), where.([]uint8))</span>
+        case []uint16:<span class="cov8" title="1">
+                return isContainsStringToArrayUint16(what.(string), where.([]uint16))</span>
+        case []uint32:<span class="cov8" title="1">
+                return isContainsStringToArrayUint32(what.(string), where.([]uint32))</span>
+        case []uint64:<span class="cov8" title="1">
+                return isContainsStringToArrayUint64(what.(string), where.([]uint64))</span>
+        case string:<span class="cov8" title="1">
+                return strings.Contains(strings.ToLower(where.(string)), strings.ToLower(what.(string)))</span>
+        case int:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(int))) == strings.ToLower(what.(string))</span>
+        case float32:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(float32))) == strings.ToLower(what.(string))</span>
+        case float64:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(float64))) == strings.ToLower(what.(string))</span>
+        case uint:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(uint))) == strings.ToLower(what.(string))</span>
+        case uint8:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(uint8))) == strings.ToLower(what.(string))</span>
+        case uint16:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(uint16))) == strings.ToLower(what.(string))</span>
+        case uint32:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(uint32))) == strings.ToLower(what.(string))</span>
+        case uint64:<span class="cov8" title="1">
+                return strings.ToLower(fmt.Sprintf("%v", where.(uint64))) == strings.ToLower(what.(string))</span>
+        default:<span class="cov8" title="1">
+                return false</span>
+        }
+}
+</pre>
+		
+		<pre class="file" id="file5" style="display: none">package single
+
+func SwitchType(what interface{}, where interface{}) bool <span class="cov8" title="1">{
+        switch what.(type) </span>{
+        case int:<span class="cov8" title="1">
+                if _, ok := where.([]int); ok </span><span class="cov8" title="1">{
+                        return isContainsIntToArrayInt(what.(int), where.([]int))
+                }</span>
+                <span class="cov8" title="1">return tryConvertForInt(what, where)</span>
+        case string:<span class="cov8" title="1">
+                if _, ok := where.([]string); ok </span><span class="cov8" title="1">{
+                        return isContainsStringToArrayString(what.(string), where.([]string))
+                }</span>
+                <span class="cov8" title="1">return tryConvertForString(what, where)</span>
+        default:<span class="cov8" title="1">
+                return false</span>
+        }
+}
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>
