@@ -1,4 +1,4 @@
-module entry
+module github.com/AndrivA89/entry
 
 go 1.16
 
