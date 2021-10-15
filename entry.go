@@ -1,8 +1,8 @@
 package entry
 
 import (
-	"entry/array"
-	"entry/single"
+	"github.com/AndrivA89/entry/array"
+	"github.com/AndrivA89/entry/single"
 	"reflect"
 )
 
